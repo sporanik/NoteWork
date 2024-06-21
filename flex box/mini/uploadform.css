@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    /* background-color: #f0f0f0; */
+    background-image: url(../../img/back5.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+
+.container {
+    border-radius: 3%;
+    width: 100%;
+    max-width: 600px;
+    background-color:rgba(240,240,240,0.3) ;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+.f-group {
+    margin-bottom: 20px;
+}
+
+
+.f-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.f-group select,
+.f-group input[type="file"] {
+    width: calc(100% - 20px); /* Adjust width as needed */
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
+select {
+    margin-bottom: 20px; /* Added to separate from the next input or select */
+}
+
+
+input[type="file"] {
+    background: white;
+}
+
+
+input[type="submit"] {
+    width: 70%;
+    height: 40px;
+    background-color: rgb(55, 218, 55);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+input[type="submit"]:hover {
+    background-color: rgb(35, 188, 35);
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+
+    .f-group select,
+    .f-group input[type="file"] {
+        width: 100%;
+    }
+
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .f-group label {
+        font-size: 14px;
+    }
+
+
+    .f-group select,
+    .f-group input[type="file"] {
+        font-size: 14px;
+    }
+}

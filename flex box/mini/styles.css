@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../../img/back5.jpg);
+    background-size: cover;
+  }
+  .cont{
+    border-radius: 10%;
+    background-color:rgba(240,240,240,0.3);
+  }
+
+ 
+ 

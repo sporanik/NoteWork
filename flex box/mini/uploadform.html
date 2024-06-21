@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .f-group {
+            margin-bottom: 20px;
+        }
+
+        .f-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .f-group select,
+        .f-group input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        input[type="button"] {
+            width: 70%;
+            height: 40px;
+            background-color: rgb(55, 218, 55);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(35, 188, 35);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .f-group select,
+            .f-group input[type="file"] {
+                width: 100%;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .f-group label {
+                font-size: 14px;
+            }
+
+            .f-group select,
+            .f-group input[type="file"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link rel="icon" href="media/img/216053093-blue-and-black-uppercase-letter-n-icon-with-a-glossy-arrow-on-a-white-background.jpg">
+  
+</head>
+<body>
+    <div class="container">
+        <h2>Upload File</h2>
+        <form action="#" method="post" enctype="multipart/form-data" name="uplodfile">
+
+            <div class="f-group">
+                <label for="slct-year">Semester</label>
+                <select name="slct-year" id="slct-year">
+                    <option value=""> -- Choose Semester -- </option>
+                    <option value="1st">1st Sem</option>
+                    <option value="2nd">2nd Sem</option>
+                    <option value="3rd">3rd Sem</option>
+                    <option value="4th">4th Sem</option>
+                    <option value="5th">5th Sem</option>
+                    <option value="6th">6th Sem</option>
+                    <option value="7th">7th Sem</option>
+                    <option value="8th">8th Sem</option>
+                </select>
+            </div>
+            <div class="f-group" >
+                <label for="slct1">Branch</label>
+                <select name="slct1" id="slct1" onchange="populate('slct1', 'slct2')">
+                    <option value=""> -- Choose Branch -- </option>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                    <option value="EC">EC</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="MECHANICAL">MECHANICAL</option>
+                </select>
+            </div>
+            
+            <div class="f-group">
+                <label for="slct2">Subject</label>
+                <select name="slct2" id="slct2" ></select>
+            </div>
+            <select name="unit" id="unit" style="margin-right: 5%;">
+                <option value=""> -- Choose Unit -- </option>
+                <option value="unit-1">Unit 1</option>
+                <option value="unit-2">Unit 2</option>
+                <option value="unit-3">Unit 3</option>
+                <option value="unit-4">Unit 4</option>
+                <option value="unit-5">Unit 5</option>
+            </select>
+            <input type="text" required>
+            
+            <input type="button" value="submit" id="btn" >
+        </form>
+    </div>
+
+    <script>
+        function populate(s1, s2) {
+            var branch = document.getElementById(s1).value;
+            var semester = document.getElementById("slct-year").value;
+            var subjectSelect = document.getElementById(s2);
+            subjectSelect.innerHTML = "";
+
+            var subjects = [];
+
+            if (branch === "CSE") {
+                subjects = getCSESubjects(semester);
+            } else if (branch === "IT") {
+                subjects = getITSubjects(semester);
+            } else if (branch === "EC") {
+                subjects = getECSubjects(semester);
+            } else if (branch === "CIVIL") {
+                subjects = getCivilSubjects(semester);
+            } else if (branch === "MECHANICAL") {
+                subjects = getMechanicalSubjects(semester);
+            }
+
+            subjects.forEach(function (subject) {
+                var option = document.createElement("option");
+                var parts = subject.split("|");
+                option.value = parts[0];
+                option.textContent = parts[1];
+                subjectSelect.appendChild(option);
+            });
+        }
+
+        function getCSESubjects(semester) {
+            switch (semester) {
+                case "1st": return ["cs-101|CS-101", "cs-102|CS-102", "cs-103|CS-103", "cs-104|CS-104", "cs-105|CS-105"];
+                case "2nd": return ["cs-201|CS-201", "cs-202|CS-202", "cs-203|CS-203", "cs-204|CS-204", "cs-205|CS-205"];
+                case "3rd": return ["cs-301|CS-301", "cs-302|CS-302", "cs-303|CS-303", "cs-304|CS-304", "cs-305|CS-305"];
+                case "4th": return ["cs-401|CS-401", "cs-402|CS-402", "cs-403|CS-403", "cs-404|CS-404", "cs-405|CS-405"];
+                case "5th": return ["cs-501|CS-501", "cs-502|CS-502", "cs-503|CS-503", "cs-504|CS-504"];
+                case "6th": return ["cs-601|CS-601", "cs-602|CS-602", "cs-603|CS-603", "cs-604|CS-604"];
+                case "7th": return ["cs-701|CS-701", "cs-702|CS-702", "cs-703|CS-703"];
+                case "8th": return ["cs-801|CS-801", "cs-802|CS-802", "cs-803|CS-803"];
+                default: return [];
+            }
+        }
+
+        function getITSubjects(semester) {
+            switch (semester) {
+                case "1st": return ["it-101|IT-101", "it-102|IT-102", "it-103|IT-103", "it-104|IT-104", "it-105|IT-105"];
+                case "2nd": return ["it-201|IT-201", "it-202|IT-202", "it-203|IT-203", "it-204|IT-204", "it-205|IT-205"];
+                case "3rd": return ["it-301|IT-301", "it-302|IT-302", "it-303|IT-303", "it-304|IT-304", "it-305|IT-305"];
+                case "4th": return ["it-401|IT-401", "it-402|IT-402", "it-403|IT-403", "it-404|IT-404", "it-405|IT-405"];
+                case "5th": return ["it-501|IT-501", "it-502|IT-502", "it-503|IT-503", "it-504|IT-504"];
+                case "6th": return ["it-601|IT-601", "it-602|IT-602", "it-603|IT-603", "it-604|IT-604"];
+                case "7th": return ["it-701|IT-701", "it-702|IT-702", "it-703|IT-703"];
+                case "8th": return ["it-801|IT-801", "it-802|IT-802", "it-803|IT-803"];
+                default: return [];
+            }
+        }
+
+        function getECSubjects(semester) {
+            switch (semester) {
+                case "1st": return ["ec-101|EC-101", "ec-102|EC-102", "ec-103|EC-103", "ec-104|EC-104", "ec-105|EC-105"];
+                case "2nd": return ["ec-201|EC-201", "ec-202|EC-202", "ec-203|EC-203", "ec-204|EC-204", "ec-205|EC-205"];
+                case "3rd": return ["ec-301|EC-301", "ec-302|EC-302", "ec-303|EC-303", "ec-304|EC-304", "ec-305|EC-305"];
+                case "4th": return ["ec-401|EC-401", "ec-402|EC-402", "ec-403|EC-403", "ec-404|EC-404", "ec-405|EC-405"];
+                case "5th": return ["ec-501|EC-501", "ec-502|EC-502", "ec-503|EC-503", "ec-504|EC-504"];
+                case "6th": return ["ec-601|EC-601", "ec-602|EC-602", "ec-603|EC-603", "ec-604|EC-604"];
+                case "7th": return ["ec-701|EC-701", "ec-702|EC-702", "ec-703|EC-703"];
+                case "8th": return ["ec-801|EC-801", "ec-802|EC-802", "ec-803|EC-803"];
+                default: return [];
+            }
+        }
+
+        function getCivilSubjects(semester) {
+            switch (semester) {
+                case "1st": return ["ce-101|CE-101", "ce-102|CE-102", "ce-103|CE-103", "ce-104|CE-104", "ce-105|CE-105"];
+                case "2nd": return ["ce-201|CE-201", "ce-202|CE-202", "ce-203|CE-203", "ce-204|CE-204", "ce-205|CE-205"];
+                case "3rd": return ["ce-301|CE-301", "ce-302|CE-302", "ce-303|CE-303", "ce-304|CE-304", "ce-305|CE-305"];
+                case "4th": return ["ce-401|CE-401", "ce-402|CE-402", "ce-403|CE-403", "ce-404|CE-404", "ce-405|CE-405"];
+                case "5th": return ["ce-501|CE-501", "ce-502|CE-502", "ce-503|CE-503", "ce-504|CE-504"];
+                case "6th": return ["ce-601|CE-601", "ce-602|CE-602", "ce-603|CE-603", "ce-604|CE-604"];
+                case "7th": return ["ce-701|CE-701", "ce-702|CE-702", "ce-703|CE-703"];
+                case "8th": return ["ce-801|CE-801", "ce-802|CE-802", "ce-803|CE-803"];
+                default: return [];
+            }
+        }
+
+        function getMechanicalSubjects(semester) {
+            switch (semester) {
+                case "1st": return ["me-101|ME-101", "me-102|ME-102", "me-103|ME-103", "me-104|ME-104", "me-105|ME-105"];
+                case "2nd": return ["me-201|ME-201", "me-202|ME-202", "me-203|ME-203", "me-204|ME-204", "me-205|ME-205"];
+                case "3rd": return ["me-301|ME-301", "me-302|ME-302", "me-303|ME-303", "me-304|ME-304", "me-305|ME-305"];
+                case "4th": return ["me-401|ME-401", "me-402|ME-402", "me-403|ME-403", "me-404|ME-404", "me-405|ME-405"];
+                case "5th": return ["me-501|ME-501", "me-502|ME-502", "me-503|ME-503", "me-504|ME-504"];
+                case "6th": return ["me-601|ME-601", "me-602|ME-602", "me-603|ME-603", "me-604|ME-604"];
+                case "7th": return ["me-701|ME-701", "me-702|ME-702", "me-703|ME-703"];
+                case "8th": return ["me-801|ME-801", "me-802|ME-802", "me-803|ME-803"];
+                default: return [];
+            }
+        }
+    </script>
+    <!-- <script src="app.js"></script> -->
+</body>
+</html>
