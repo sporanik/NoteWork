@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoteWorks</title>
+    <link rel="" href="">
+    <link rel="stylesheet" href="flex box/mini/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="flex box/mini/media/img/216053093-blue-and-black-uppercase-letter-n-icon-with-a-glossy-arrow-on-a-white-background.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <img src="flex box/mini/media/img/216053093-blue-and-black-uppercase-letter-n-icon-with-a-glossy-arrow-on-a-white-background.jpg" width="45px" height="45px" alt="">
+                  </li>
+            </ul>
+          <a class="navbar-brand m-5 mt-0 mb-0  ms-2" href="#"><h2>NoteWorks</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link" href="#1" ><strong>Courses</strong></a>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link" href="#2" ><strong>Our Services</strong></a>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search"> 
+              <button class="btn btn-outline-dark m-1" id="openPageBtn" type="submit">log in</button>
+            </form>
+            <script>
+              document.getElementById('openPageBtn').addEventListener('click', function() {
+                  window.open('flex box/mini/form.html', '_blank');
+              });
+            </script>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- LANDING PAGE  (#08202E)-->
+      <div  class="body container-fluid d-flex flex-column align-items-center justify-content-center w-5" style="background-image: url(img/back4.png);background-size: cover;">  
+          <div>
+            <h1 style="color: white; ">Learn to serve</h1>
+          </div> 
+          <div><p style="color: white;">Seek out optimal notes and previous <br>
+            year questions and assignments</p></div>
+          <div class="d-flex flex-row flex-wrap m-1">
+            <div class="btn  btn-lg btn-dark m-2  btn1"> Notes </div>
+            <div class="btn  btn-lg btn-dark  m-2  btn2"> PY  Questions </div>
+          </div>
+      </div>
+      
+      <!-- SERVICES -->
+      <div class="cources container-fluid d-flex justify-content-center flex-column text-center" id="2">
+        <div class="heading1 mt-5" style="color: black;">
+          <strong><h1>Our Services</h1></strong>
+        </div>
+        <div class="container-fluid m-3 d-flex flex-wrap">
+          <div class="row m-2 justify-content-evenly">
+            <div class="col-sm-2 mt-2">
+              <div class="card temp">
+                <img src="img/pyq.png" width="160%" height="160%" alt="" class="card-img-top png">
+                <div class="card-content"><h5>PYQ</h5></div>
+              </div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card temp"><img src="img/free.png" width="150%" height="150%" alt="" class="card-img-top png">
+              <div class="card-content"><h5>Free</h5></div>
+              </div>
+            </div>      
+          </div>
+          <div class="row justify-content-evenly m-2">
+            <div class="col-sm-2 mt-2">
+              <div class="card temp">
+                <img src="img/tech.png" width="150%" height="150%" alt="" class="card-img-top png">
+                <div class="card-content"><h5>tech Notes</h5></div>
+              </div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card temp">
+                <img src="img/notes.png" width="150%" height="150%" alt="" class="card-img-top png">
+                <div class="card-content"><h5>Hand Written</h5></div>
+              </div>
+            </div>
+          
+          </div>
+        </div>       
+      </div>
+
+      <!-- COURCES -->
+      <div class="cources container-fluid d-flex justify-content-center flex-column text-center" id="1" style="background-image: url(img/back5.jpg); background-size: cover;">
+        <div class="heading1 mt-5" style="color: white;">
+          <strong><h1>COURCES</h1></strong>
+        </div>
+        <div class="container-fluid m-3 d-flex flex-wrap">
+          <div class="row m-2 justify-content-center">
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href="flex box/mini/html_notes.html"><img src="img/html.png" alt="" width="100%" height="100%"></a></div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href=""><img src="img/c++.png" width="100%" height="100%"></a></div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href="https://drive.google.com/file/d/1-FwJf5fJIALiyY2o8LKCWj0SYbI4MrRE/view?usp=drivesdk"><img src="img/CSS.png" width="100%" height="100%"></a></div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href="https://drive.google.com/file/d/1-9gkvYL8Ksg2RSun9SG0eiKQKJOqSBzO/view?usp=drivesdk"><img src="img/c.png" width="100%" height="100%"></a></div>
+            </div>
+          </div>
+          <div class="row justify-content-center m-2">
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href="https://drive.google.com/file/d/1-2vwKO7J7F9dT3jE2SRFxZviNmXoAWKx/view?usp=drivesdk"><img src="img/java.png" width="100%" height="100%"></a></div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href=""><img src="img/python.png" width="100%" height="100%"></a></div>
+            </div>
+            <div class="col-sm-2 mt-2">
+              <div class="card crd"><a href="flex box/mini/btech_year.html"><img src="img/btech.png" width="100%" height="100%"></a></div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- footer -->
+      <div class="footer">
+        <footer>
+          <h2 class="footer-h2">NoteWorks</h2>
+      
+          <div class="about">
+              <ul class="about-list">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contect</a></li>
+                  <li><a href="#">Term Of Service</a></li>
+                  <li><a href="#">Privecy Policy</a></li>
+              </ul>
+          </div>
+          <div class="about-icon">
+             <a href="#"> <i class="fa-brands fa-twitter"></i></a> 
+             <a href="#"> <i class="fa-brands fa-youtube yt"></i></a> 
+             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+             <a href="#"><i class="fa-brands fa-github"></i></a>
+             <a href="#"><i class="fa-brands fa-hackerrank"></i></a>
+      
+          </div>
+          <p class="copyright"> &#169 2024 BGI All right reserved</p>
+      
+        </footer>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
